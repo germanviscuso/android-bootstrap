@@ -9,6 +9,7 @@ import android.app.Instrumentation;
 import android.content.Context;
 
 import com.github.kevinsawicki.http.HttpRequest;
+import com.kii.cloud.storage.Kii;
 
 import dagger.ObjectGraph;
 
@@ -50,7 +51,7 @@ public class BootstrapApplication extends Application {
         objectGraph = ObjectGraph.create(getRootModule());
         objectGraph.inject(this);
         objectGraph.injectStatics();
-
+        Kii.initialize("8942cdd7", "add19e8259fd77296dc7e4c7942a98c6", Kii.Site.US);
     }
 
     private Object getRootModule() {
